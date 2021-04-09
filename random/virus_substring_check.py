@@ -37,7 +37,7 @@ Constraints
 
 
 Output Format
-For each person, print POSITIVE or NEGATIVE in a separate line
+For each person, #print POSITIVE or NEGATIVE in a separate line
 
 Sample TestCase 1 :
 Input :
@@ -68,19 +68,22 @@ for i in range(n):
 name = "coronavirus"
         
 name_list = ['abcde', 'crnas', 'onarous']
+name_list =['abcde', 'crnaos', 'crnas','onarous']
 l = []
 for i in name_list:
     cnt = 0
     start = 0
     end = len(name)
     is_neg = False
-    #print("---"*10)
-
+    temp = name
     for j in i:
         #print("start:end,",start,end)
-        #print("name",name[start:end],"===",j)
-        if j in name[start:end] and is_neg ==False:
-            ind = name[start:end].find(j)
+        #print("name",temp[start:end],"===",j)
+        temp = temp[start:end]
+        #print("temp",temp)
+        #print('fine==',j,temp.find(j))
+        if j in temp and is_neg ==False:
+            ind = temp.find(j)
             if ind >=0:
                 start = ind + 1
                 cnt +=1
@@ -90,11 +93,9 @@ for i in name_list:
                 break
         else:
             is_neg = True
-            #print("Negative",i)
             l.append("negative")
             break
         if not is_neg and (cnt) == len(i):
-            #print("+ve=================")
             l.append("positive")
 print(name_list)
 print(l)
