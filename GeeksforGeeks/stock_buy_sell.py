@@ -6,27 +6,6 @@ The cost of a stock on each day is given in an array, find the max profit that y
  Again buy on day 4 and sell on day 6. If the given array of prices is sorted in decreasing order, then profit cannot be earned at all.
 
 """
-'''
-stock_set = {100, 180, 260, 310, 40, 535, 695}
-
-data = {}
-
-current_max = None
-if stock_set:
-    current_max = stock_set[0]
-    print("current_max--",current_max)
-
-
-for i in stock_set:
-    
-    if i >= current_max:
-        current_max = i
-    else:
-        # sell
-
-'''
-
-
 
 price = [100, 180, 260, 310, 40, 535, 695]
 price = [200,100, 180, 260, 310, 40,10, 535, 234, 10, 180, 260, 310, 40,10, 535]
