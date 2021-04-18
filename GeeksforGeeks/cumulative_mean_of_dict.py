@@ -9,6 +9,8 @@ Given the dictionary list, our task is to write a Python Program to extract the 
 
     Output : {‘gfg’: 12.666666666666666, ‘is’: 8, ‘best’: 10, ‘for’: 10, ‘geeks’: 8.5, ‘and’: 5, ‘find’: 3}
 """
+            
+from statistics import mean
 
 test_list = [{'gfg' : 34, 'is' : 8, 'best' : 10},
 
@@ -20,12 +22,16 @@ d= {}
 
 for i in test_list:
     for j,k in i.items():
-        print(j)
         if j in d:
-            print(d[j] + k ,d[j] +1)
-            #d[j] = list(d[j] + k ,d[j] +1)
+           
+            # combining each key to all values in
+            # all dictionaries
+            d[j].append(k)
 
         else:
-            d[j] = [k , 1]
+            d[j] = [k]
 
 
+for m, n in d.items():
+    d[m] = mean(n)
+print(d)
